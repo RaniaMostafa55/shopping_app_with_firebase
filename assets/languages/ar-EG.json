@@ -1,0 +1,23 @@
+{
+  "sign_up": "إنشاء حساب",
+  "full_name": "الاسم بالكامل",
+  "email_address": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "confirm_password": "تأكيد كلمة المرور",
+  "please_enter_your_full_name": "من فضلك أدخل اسمك بالكامل",
+  "first_letter_should_be_capitalized": "يجب أن يكون أول حرف كبيرا",
+  "please_enter_a_valid_email": "من فضلك أدخل بريد إلكتروني صالح",
+  "password_should_contain_at_least_6_characters": "كلمة المرور يجب أن تحتوي على 6 أحرف على الأقل",
+  "Please confirm your password": "من فضلك قم بتأكيد كلمة المرور",
+  "Passwords don't match": "كلمة المرور ليست متطابقة",
+  "Success": "نجاح",
+  "account created successfully": "تم إنشاء الحساب بنجاح",
+  "close": "إغلاق",
+  "Home Page": "الصفحة الرئيسية",
+  "Our Products": "منتجاتنا",
+  "Hot Offers": "العروض المميزة",
+  "Login":"تسجيل الدخول",
+  "Don't have account? Sign up":"ليس لديك حساب؟ قم بإنشاء حساب",
+  "Already have an account? Sign in":"لديك حساب بالفعل؟ قم بتسجيل الدخول",
+  "Signed in successfully":"تم تسجيل الدخول بنجاح"
+}

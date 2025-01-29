@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "230311438050",
+    "project_id": "simpleshoppingapp-f391c",
+    "storage_bucket": "simpleshoppingapp-f391c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230311438050:android:53ebacd2d33e85c04560bb",
+        "android_client_info": {
+          "package_name": "com.example.shopping_app_with_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH-zweVD6DRKP8WvyZdOjLfiJPNEuAVpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

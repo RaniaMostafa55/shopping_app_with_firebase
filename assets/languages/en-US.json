@@ -1,0 +1,23 @@
+{
+  "sign_up": "Sign Up",
+  "full_name": "Full Name",
+  "email_address": "Email Address",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "please_enter_your_full_name": "Please enter your full name",
+  "first_letter_should_be_capitalized": "First letter should be capitalized",
+  "please_enter_a_valid_email": "Please enter a valid email",
+  "password_should_contain_at_least_6_characters": "Password should contain at least 6 characters",
+  "Please confirm your password": "Please confirm your password",
+  "Passwords don't match": "Passwords don't match",
+  "Success": "Success",
+  "account created successfully": "account created successfully",
+  "close": "close",
+  "Home Page": "Home Page",
+  "Our Products": "Our Products",
+  "Hot Offers": "Hot Offers",
+  "Login":"Login",
+  "Don't have account? Sign up":"Don't have account? Sign up",
+  "Already have an account? Sign in":"Already have an account? Sign in",
+  "Signed in successfully":"Signed in successfully"
+}
