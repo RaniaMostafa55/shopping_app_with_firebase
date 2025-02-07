@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:local_auth/local_auth.dart';
+import 'package:shopping_app_with_firebase/views/profile.dart';
 import 'package:shopping_app_with_firebase/widgets/shooping_first_section.dart';
 import 'package:shopping_app_with_firebase/widgets/shopping_second_section.dart';
 import 'package:shopping_app_with_firebase/widgets/shopping_third_section.dart';
 import 'package:shopping_app_with_firebase/widgets/title_text.dart';
-
 import '../constants.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,35 +16,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final LocalAuthentication fingerPrintAuth = LocalAuthentication();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        // leading: IconButton(
-        //   icon: const Icon(
-        //     Icons.arrow_back_ios,
-        //     color: Colors.white,
-        //   ),
-        //   onPressed: () {
-        //     Navigator.pop(context);
-        //   },
-        // ),
         backgroundColor: Colors.indigo,
         title: Text(
           "Home Page".tr(),
           style: const TextStyle(color: Colors.white),
         ),
         centerTitle: true,
+        foregroundColor: Colors.white,
+        leading:
+            //a button to convert language of the app
+            IconButton(
+          onPressed: () {
+            translate();
+          },
+          icon: const Icon(Icons.translate),
+        ),
         actions: [
-          //a button to convert language of the app
           IconButton(
-            onPressed: () {
-              translate();
-            },
-            icon: const Icon(Icons.translate),
-            color: Colors.white,
-          )
+              onPressed: () {
+                authenticate();
+              },
+              icon: Icon(Icons.person))
         ],
       ),
       //make the page scrollable
@@ -89,6 +88,34 @@ class _MyHomePageState extends State<MyHomePage> {
       context.setLocale(const Locale('ar', 'EG'));
     } else {
       context.setLocale(const Locale('en', 'US'));
+    }
+  }
+
+  //a function to request user's fingerprint
+  Future authenticate() async {
+    try {
+      bool authenticated = await fingerPrintAuth.authenticate(
+        localizedReason: "Verify it's you",
+        options: AuthenticationOptions(
+          biometricOnly: true,
+          stickyAuth: true,
+        ),
+      );
+      //if fingerprint is the right one, it will navigates to profile
+      if (authenticated) {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            return Profile();
+          },
+        ));
+        //if it's not the right one "Failed" message will appear
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text("Failed"), backgroundColor: Colors.redAccent));
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Failed"), backgroundColor: Colors.redAccent));
     }
   }
 }

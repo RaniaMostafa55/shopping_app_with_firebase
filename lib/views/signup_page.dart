@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping_app_with_firebase/views/home_page.dart';
 import 'package:shopping_app_with_firebase/widgets/custom_button.dart';
 import 'package:shopping_app_with_firebase/widgets/custom_text_field.dart';
@@ -123,6 +124,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     if (Constants.registerFormKey.currentState!.validate()) {
                       //Use firebase authentication to sign up
                       try {
+                        final SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        await prefs.setString(
+                            "name", Constants.fullnameController.text);
+                        await prefs.setString(
+                            "email", Constants.registerEmailController.text);
                         await FirebaseAuth.instance
                             .createUserWithEmailAndPassword(
                           email: Constants.registerEmailController.text,

@@ -55,4 +55,5 @@ class Constants {
   static bool isConfirmPassHidden = true;
 //create an empty list to add any error we find to it while taking inputs from user
   static List<String> errors = [];
+  static Color mainColor = Colors.indigo;
 }
